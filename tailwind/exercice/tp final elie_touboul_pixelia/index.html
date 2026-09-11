@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>acceil</title>
+
+    <script src="main.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        colorless: "#2563EB",
+                        colorlessdark: "#eccf3e",
+                        brown: "#814a32"
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+
+<body class="bg-gray-300 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+<!-- 🧭 NAVIGATION -->
+<header class="bg-colorless dark:bg-colorlessdark shadow-lg p-4">
+    <div class="flex justify-between items-center max-w-7xl mx-auto">
+        <h1 class="text-2xl font-bold text-white dark:text-black">pixelia</h1>
+
+        <nav class="hidden md:flex flex-col md:flex-row md:space-x-6 text-sm font-medium text-white dark:text-black" id="nav-menu">
+            <a href="index.html" class="block py-2 hover:text-indigo-600">Accueil</a>
+            <a href="galerie.html" class="block py-2 hover:text-indigo-600">galerie</a>
+            <a href="contact.html" class="block py-2 hover:text-indigo-600">contact</a>
+        </nav>
+
+        <button class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-4 py-2 rounded" id="theme">
+            🌗 Basculer thème
+        </button>
+        <button id="burger" class="md:hidden text-white-500 text-3xl focus:outline-none">
+            &#9776;
+        </button>
+    </div>
+</header>
+
+<section class="text-center bg-blue-300 dark:bg-brown px-4 py-4 ">
+    <h2 class="text-2xl font-bold text-white-900 my-4">Bienvenue sur Pixela </h2>
+    <p class="max-w-md mx-auto">explorer la culture rétro gaming, redecouvre les clasiques 8-bits et partage ta
+        passion!</p>
+</section>
+
+<section class="my-4 bg-gray-200 dark:bg-gray-900 py-16 text-center ">
+    <h2 class="font-bold">A propos de pixelia. </h2>
+    <p class="max-w-md mx-auto">Pixelia est une communauté dédiée aux jeux rétro et à l'univers geek. Notre objectif est
+        de réunir les passionnés autour de contenu, d'événements et de partages pixelisés !</p>
+
+    <div class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-10 my-4">
+        <article class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg py-1 text-center dark:text-white">
+            <h3 class="font-bold">Jeux iconiques</h3>
+            <p>Découvre ou redécouvre les jeux qui ont marqué l'histoire de la NES à la ps1.</p>
+        </article>
+
+        <article class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg py-1 text-center dark:text-white">
+            <h3 class="font-bold">Culture geek</h3>
+            <p>Article, interviewset annecdotes autour des consoles, développeur et joueurs.</p>
+        </article>
+
+        <article class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg py-1 text-center dark:text-white">
+            <h3 class="font-bold">Evenements</h3>
+            <p>Participe à nos tournois rétro, expos, LANs et défis communautaires en ligne.</p>
+        </article>
+    </div>
+</section>
+
+<div class="my-16 bg-gray-100 dark:bg-gray-700 py-8">
+    <section class="text-center">
+        <h2 class="text-lg mb-4 dark:text-white">Reste connecté avec la newsletter</h2>
+        <label for="newsletter-email"></label><input type="email" name="Ton email" id="newsletter-email" placeholder="exemple@email.com" class="border border-black dark:bg-gray-800 dark:text-white dark:border-gray-600">
+        <button class="bg-yellow-400 rounded-md dark:bg-orange-500">S'inscrire</button>
+    </section>
+</div>
+
+<footer class="text-center my-16">
+    <p>Merci de soutenir Pixelia-la passion du retro!</p>
+</footer>
+</body>
+</html>
