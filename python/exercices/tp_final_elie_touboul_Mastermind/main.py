@@ -27,3 +27,12 @@ def comparer(combinaison, proposition):
         elif proposition[i] in combinaison:
             mal_places += 1
     return bien_places, mal_places
+#print(comparer([1, 2, 3, 4], [1, 3, 2, 5]))
+
+def afficher_historique(historique):
+    for proposition, bien_places, mal_places in historique:
+        print(f"proposition : {proposition}, bien_places : {bien_places}, mal_places : {mal_places} ")
+
+#afficher_historique([([1, 4, 3, 2], 1, 2), ([1, 2, 3, 4], 2, 1)])
+
+
