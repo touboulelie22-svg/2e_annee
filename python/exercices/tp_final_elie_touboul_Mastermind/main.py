@@ -26,4 +26,4 @@ def comparer(combinaison, proposition):
             bien_places  += 1
         elif proposition[i] in combinaison:
             mal_places += 1
-            return bien_places, mal_places
+    return bien_places, mal_places
