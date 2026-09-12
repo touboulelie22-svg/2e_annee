@@ -15,7 +15,7 @@ def demander_proposition():
             proposition = [int(combinaison) for combinaison in saisie]
             return proposition
         else :
-            print("votre saisie n'est pas valide veuilly reessayer avec une saisie valide")
+            print("votre saisie n'est pas valide veuillez reessayer avec une saisie valide")
 #print(demander_proposition())
 
 def comparer(combinaison, proposition):
@@ -35,4 +35,12 @@ def afficher_historique(historique):
 
 #afficher_historique([([1, 4, 3, 2], 1, 2), ([1, 2, 3, 4], 2, 1)])
 
-
+def jouer():
+    combinaison = generer_combinaison()
+    historique = []
+    tentative_effectuer = 0
+    while tentative_effectuer < 10:
+        proposition = demander_proposition()
+        tentative_effectuer += 1
+        bien_places, mal_places = comparer(combinaison, proposition)
+        historique.append((proposition, bien_places, mal_places))
