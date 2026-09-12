@@ -10,12 +10,12 @@ def generer_combinaison():
 
 def demander_proposition():
     while True:
-        saisie = input("veuillez entré 4 chiffre seulement ")
+        saisie = input("veuillez entré 4 chiffre uniquement")
         if len(saisie) == 4  and saisie.isdigit():
             proposition = [int(combinaison) for combinaison in saisie]
             return proposition
         else :
-            print("votre saisie n'est pas valide veuillez reessayer avec une saisie valide")
+            print("votre saisie n'est pas valide veuillez reessayer avec 4 chifre seulement")
 #print(demander_proposition())
 
 def comparer(combinaison, proposition):
@@ -44,3 +44,10 @@ def jouer():
         tentative_effectuer += 1
         bien_places, mal_places = comparer(combinaison, proposition)
         historique.append((proposition, bien_places, mal_places))
+        afficher_historique(historique)
+        if bien_places == 4 :
+            print("felicitation!! vous avez gagné")
+            break
+    else:
+        print(f"vous avez perdu, le nombre dessaie maximum a été attain : {combinaison}")
+jouer()
