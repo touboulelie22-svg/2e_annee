@@ -40,6 +40,7 @@ def jouer():
     historique = []
     tentative_effectuer = 0
     while tentative_effectuer < 10:
+        print(f"tentative restente {10 - tentative_effectuer}")
         proposition = demander_proposition()
         tentative_effectuer += 1
         bien_places, mal_places = comparer(combinaison, proposition)
