@@ -47,4 +47,14 @@ def jouer():
             break
     else:
         print(f"vous avez perdu, le nombre dessaie maximum a été attain le code secret était: {combinaison}")
-jouer()
+
+while True:
+    jouer()
+    while True:
+        rejouer = input("voulez vous rejouer une partie (y/n)")
+        if rejouer == "y" or rejouer == "n":
+            break
+        else:
+            print("réponse invalide tapez y ou n")
+    if rejouer == "n":
+        break
