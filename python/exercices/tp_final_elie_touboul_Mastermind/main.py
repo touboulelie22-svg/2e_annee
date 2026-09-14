@@ -20,7 +20,7 @@ def comparer(combinaison, proposition):
     for i in range(len(combinaison)):
         if combinaison[i] == proposition[i]:
             bien_places  += 1
-        elif proposition[i] != combinaison:
+        elif proposition[i] in combinaison:
             mal_places += 1
     return bien_places, mal_places
 #print(comparer([1, 2, 3, 4], [1, 3, 2, 5]))
