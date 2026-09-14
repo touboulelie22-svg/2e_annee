@@ -10,7 +10,7 @@ def generer_combinaison():
 
 def demander_proposition():
     while True:
-        saisie = input("veuillez entré 4 chiffre uniquement")
+        saisie = input("veuillez entré 4 chiffre entre 0 et 6 uniquement")
         if len(saisie) == 4  and saisie.isdigit():
             proposition = [int(combinaison) for combinaison in saisie]
             return proposition
