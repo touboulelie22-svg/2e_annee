@@ -1,7 +1,6 @@
 import random
 def generer_combinaison():
     combinaison = [random.randint(0,6) for i in range (4)]
-    print(combinaison)
     return combinaison
 #print(generer_combinaison())
 
