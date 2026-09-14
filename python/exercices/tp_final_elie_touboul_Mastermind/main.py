@@ -1,11 +1,8 @@
 import random
 def generer_combinaison():
-    combinaison = []
-    for i in range(4):
-        chiffre = random.randint(0,6)
-        combinaison.append(chiffre)
+    combinaison = [random.randint(0,6) for i in range (4)]
+    print(combinaison)
     return combinaison
-
 #print(generer_combinaison())
 
 def demander_proposition():
