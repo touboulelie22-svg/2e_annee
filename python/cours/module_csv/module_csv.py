@@ -7,6 +7,6 @@ def create_folder(path, name):
         print("le chemin existe deja")
 
 
-path = "."
+path = ".."
 name = "test"
 create_folder(path, name)

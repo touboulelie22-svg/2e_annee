@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/python/config_python/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/python/untitled/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/python/cours/module_csv/.venv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
