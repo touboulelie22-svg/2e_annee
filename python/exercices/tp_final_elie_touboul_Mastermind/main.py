@@ -46,7 +46,7 @@ def jouer():
             print("felicitation!! vous avez gagné")
             break
     else:
-        print(f"vous avez perdu, le nombre dessaie maximum a été attain le code secret était: {combinaison}")
+        print(f"vous avez perdu, le nombre d'essaie maximum a été attain le code secret était: {combinaison}")
 
 while True:
     jouer()
