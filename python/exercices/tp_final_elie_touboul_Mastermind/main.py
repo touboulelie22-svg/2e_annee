@@ -6,7 +6,7 @@ def generer_combinaison():
 
 def demander_proposition():
     while True:
-        saisie = input("veuillez entré 4 chiffre entre 0 et 6 uniquement\n")
+        saisie = input("veuillez entré 4 chiffre entre 0 et 6 uniquement ")
         if len(saisie) == 4  and saisie.isdigit():
             proposition = [int(combinaison) for combinaison in saisie]
             return proposition
@@ -36,7 +36,7 @@ def jouer():
     historique = []
     tentative_effectuer = 0
     while tentative_effectuer < 10:
-        print(f"tentative restente {10 - tentative_effectuer}")
+        print(f"tentative restante {10 - tentative_effectuer}")
         proposition = demander_proposition()
         tentative_effectuer += 1
         bien_places, mal_places = comparer(combinaison, proposition)
