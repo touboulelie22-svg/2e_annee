@@ -7,7 +7,9 @@ authors = [
     { name = "elie.touboul", email = "touboulelie22@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pandas>=3.0.5",
+]
 
 [project.scripts]
 module-csv = "module_csv:main"
