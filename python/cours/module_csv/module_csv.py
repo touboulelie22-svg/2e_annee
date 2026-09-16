@@ -1,5 +1,5 @@
 import os
-import panda
+import pandas
 import csv
 def create_folder(path, name):
     chemin = os.path.join(path, name)
