@@ -1,0 +1,19 @@
+[project]
+name = "librairies"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "elie.touboul", email = "touboulelie22@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pendulum>=3.2.0",
+]
+
+[project.scripts]
+librairies = "librairies:main"
+
+[build-system]
+requires = ["uv_build>=0.12.11,<0.13.0"]
+build-backend = "uv_build"
