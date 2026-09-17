@@ -7,7 +7,9 @@
       <excludeFolder url="file://$MODULE_DIR$/python/untitled/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/python/cours/module_csv/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/python/cours/librairies/.venv" />
-      <excludeFolder url="file://$MODULE_DIR$/python/exercices/exercice 4/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/python/cours/les metode magiques/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/python/exercices/exercice_4/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/python/exercices/exercice_5/.venv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

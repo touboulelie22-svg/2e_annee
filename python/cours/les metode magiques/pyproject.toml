@@ -1,0 +1,17 @@
+[project]
+name = "les-metode-magiques"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "elie.touboul", email = "touboulelie22@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+les-metode-magiques = "les_metode_magiques:main"
+
+[build-system]
+requires = ["uv_build>=0.12.11,<0.13.0"]
+build-backend = "uv_build"
