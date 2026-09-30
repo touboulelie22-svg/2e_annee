@@ -71,6 +71,21 @@ function rechercherParTitre(liste, texte) {
     });
 }
 
+function compterBugs(liste) {
+    let open = 0;
+    let closed = 0;
+
+    for (const bug of liste) {
+        if (bug.status === "open") {
+            open++;
+        } else {
+            closed++;
+        }
+    }
+
+    return { open: open, closed: closed };
+}
+
 // ===== Tests =====
 const listeTest = [];
 console.assert(ajouterBug(listeTest, "", "d", "low") === null, "Titre vide refusé");
@@ -109,5 +124,13 @@ console.assert(rechercherParTitre(listeRecherche, "formulaire").length === 1, "R
 console.assert(rechercherParTitre(listeRecherche, "FORMULAIRE").length === 1, "Insensible à la casse");
 console.assert(rechercherParTitre(listeRecherche, "").length === 2, "Recherche vide renvoie tout");
 console.assert(rechercherParTitre(listeRecherche, "zzz").length === 0, "Aucun résultat");
+
+const listeCompte = [];
+console.assert(compterBugs(listeCompte).open === 0, "Liste vide : 0 ouvert");
+ajouterBug(listeCompte, "Bug 1", "d", "high");
+ajouterBug(listeCompte, "Bug 2", "d", "low");
+changerStatut(listeCompte, listeCompte[0].id);
+console.assert(compterBugs(listeCompte).open === 1, "Un bug ouvert");
+console.assert(compterBugs(listeCompte).closed === 1, "Un bug fermé");
 
 prochainId = 1;
