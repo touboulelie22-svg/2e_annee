@@ -11,6 +11,8 @@
       <excludeFolder url="file://$MODULE_DIR$/python/exercices/exercice_4/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/python/exercices/exercice_5/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Photoshop/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/simple-photoshop/.venv" />
     </content>
     <orderEntry type="jdk" jdkName="~\Documents\2e_annee\.venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
