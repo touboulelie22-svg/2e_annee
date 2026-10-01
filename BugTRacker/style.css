@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+input, select, button {
+    padding: 8px;
+}
+
+#message-erreur {
+    color: #c0392b;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+li button {
+    margin-left: 8px;
+}
+
+li.open {
+    border-left: 6px solid #27ae60;
+}
+
+li.closed {
+    border-left: 6px solid #999;
+    background-color: #ececec;
+    color: #777;
+}

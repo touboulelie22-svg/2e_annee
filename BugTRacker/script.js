@@ -86,6 +86,77 @@ function compterBugs(liste) {
     return { open: open, closed: closed };
 }
 
+// ===== Interface =====
+const listeBugs = document.getElementById("liste-bugs");
+const compteurOuverts = document.getElementById("compteur-ouverts");
+const compteurFermes = document.getElementById("compteur-fermes");
+const champRecherche = document.getElementById("champ-recherche");
+const filtrePriorite = document.getElementById("filtre-priorite");
+
+function creerElementBug(bug) {
+    const li = document.createElement("li");
+    li.className = bug.status;
+    li.textContent = bug.title + " (" + bug.priority + ", " + (bug.status === "open" ? "Ouvert" : "Fermé") + ") : " + bug.description;
+
+    const boutonStatut = document.createElement("button");
+    boutonStatut.textContent = bug.status === "open" ? "Fermer" : "Rouvrir";
+    boutonStatut.addEventListener("click", function () {
+        changerStatut(bugs, bug.id);
+        afficher();
+    });
+
+    const boutonSupprimer = document.createElement("button");
+    boutonSupprimer.textContent = "Supprimer";
+    boutonSupprimer.addEventListener("click", function () {
+        supprimerBug(bugs, bug.id);
+        afficher();
+    });
+
+    li.appendChild(boutonStatut);
+    li.appendChild(boutonSupprimer);
+    return li;
+}
+
+function afficher() {
+    listeBugs.innerHTML = "";
+
+    let resultat = filtrerParPriorite(bugs, filtrePriorite.value);
+    resultat = rechercherParTitre(resultat, champRecherche.value);
+
+    for (const bug of resultat) {
+        listeBugs.appendChild(creerElementBug(bug));
+    }
+
+    const compteurs = compterBugs(bugs);
+    compteurOuverts.textContent = compteurs.open;
+    compteurFermes.textContent = compteurs.closed;
+}
+
+const formulaire = document.getElementById("formulaire-bug");
+const champTitre = document.getElementById("champ-titre");
+const champDescription = document.getElementById("champ-description");
+const champPriorite = document.getElementById("champ-priorite");
+const messageErreur = document.getElementById("message-erreur");
+
+formulaire.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const bug = ajouterBug(bugs, champTitre.value, champDescription.value, champPriorite.value);
+
+    if (bug === null) {
+        messageErreur.textContent = "Le titre est obligatoire.";
+        return;
+    }
+
+    messageErreur.textContent = "";
+    champTitre.value = "";
+    champDescription.value = "";
+    afficher();
+});
+
+champRecherche.addEventListener("input", afficher);
+filtrePriorite.addEventListener("change", afficher);
+
 // ===== Tests =====
 const listeTest = [];
 console.assert(ajouterBug(listeTest, "", "d", "low") === null, "Titre vide refusé");
@@ -134,3 +205,5 @@ console.assert(compterBugs(listeCompte).open === 1, "Un bug ouvert");
 console.assert(compterBugs(listeCompte).closed === 1, "Un bug fermé");
 
 prochainId = 1;
+
+afficher();

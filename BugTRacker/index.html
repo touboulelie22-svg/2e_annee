@@ -9,5 +9,38 @@
 <body>
 <h1>Gestion des bugs</h1>
 
+<p>Bugs ouverts : <strong id="compteur-ouverts">0</strong></p>
+<p>Bugs fermés : <strong id="compteur-fermes">0</strong></p>
+
+<h2>Ajouter un bug</h2>
+<form id="formulaire-bug">
+  <label for="champ-titre">Titre</label>
+  <input type="text" id="champ-titre" placeholder="Titre">
+
+  <label for="champ-description">Description</label>
+  <input type="text" id="champ-description" placeholder="Description">
+
+  <label for="champ-priorite">Priorité</label>
+  <select id="champ-priorite">
+    <option value="low">low</option>
+    <option value="high">high</option>
+  </select>
+
+  <button type="submit">Ajouter</button>
+</form>
+<p id="message-erreur"></p>
+
+<h2>Liste des bugs</h2>
+<label for="champ-recherche">Recherche</label>
+<input type="text" id="champ-recherche" placeholder="Rechercher par titre">
+
+<label for="filtre-priorite">Filtrer par priorité</label>
+<select id="filtre-priorite">
+  <option value="all">Toutes les priorités</option>
+  <option value="low">low</option>
+  <option value="high">high</option>
+</select>
+
+<ul id="liste-bugs"></ul>
 </body>
 </html>
