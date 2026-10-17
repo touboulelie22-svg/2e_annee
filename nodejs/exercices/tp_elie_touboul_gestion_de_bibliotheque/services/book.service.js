@@ -1,48 +1,48 @@
-let livres = [
+let books = [
     { id: 1, titre: 'harry potter', auteur: 'J. K. Rowling', disponible: true },
     { id: 2, titre: 'dragons des tempêtes', auteur: 'Julie Kagawa', disponible: false }
 ];
 
 let nextId = 3;
 
-const getAllLivres = () => {
-    return livres;
+const getAllBooks = () => {
+    return books;
 };
 
-const getLivreById = (id) => {
-    return livres.find((livre) => livre.id === id);
+const getBookById = (id) => {
+    return books.find((book) => book.id === id);
 };
 
-const addLivre = (titre, auteur) => {
-    const livre = { id: nextId, titre: titre, auteur: auteur, disponible: true };
+const addBook = (titre, auteur) => {
+    const book = { id: nextId, titre: titre, auteur: auteur, disponible: true };
     nextId++;
-    livres.push(livre);
-    return livre;
+    books.push(book);
+    return book;
 };
 
-const deleteLivre = (id) => {
-    const position = livres.findIndex(livre => livre.id === id);
+const deleteBook = (id) => {
+    const position = books.findIndex(book => book.id === id);
     if (position === -1) {
         return false;
     }
-    livres.splice(position, 1);
+    books.splice(position, 1);
     return true;
 };
 
-const updateLivre = (id, titre, auteur) => {
-    const livre = getLivreById(id);
-    if (!livre) {
+const updateBook = (id, titre, auteur) => {
+    const book = getBookById(id);
+    if (!book) {
         return undefined;
     }
-    livre.titre = titre;
-    livre.auteur = auteur;
-    return livre;
+    book.titre = titre;
+    book.auteur = auteur;
+    return book;
 };
 
 module.exports = {
-    getAllLivres,
-    getLivreById,
-    addLivre,
-    deleteLivre,
-    updateLivre
+    getAllBooks,
+    getBookById,
+    addBook,
+    deleteBook,
+    updateBook
 };
