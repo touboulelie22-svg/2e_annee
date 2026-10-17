@@ -24,3 +24,15 @@ const createBook = (req, res) => {
     res.status(201).json(book);
 };
 
+const updateBookById = (req, res) => {
+    const id = Number(req.params.id);
+    const { titre, auteur } = req.body;
+    if (!titre || !auteur) {
+        return res.status(400).json({ message: 'Titre and auteur are required' });
+    }
+    const book = updateBook(id, titre, auteur);
+    if (!book) {
+        return res.status(404).json({message: 'book not found' });
+    }
+    res.status(201).json(book);
+};
