@@ -32,7 +32,24 @@ const updateBookById = (req, res) => {
     }
     const book = updateBook(id, titre, auteur);
     if (!book) {
-        return res.status(404).json({message: 'book not found' });
+        return res.status(404).json({ message: 'Book not found' });
     }
-    res.status(201).json(book);
+    res.json(book);
+};
+
+const removeBook = (req, res) => {
+    const id = Number(req.params.id);
+    const isDeleted = deleteBook(id);
+    if (!isDeleted) {
+        return res.status(404).json({ message: 'Book not found' });
+    }
+    res.json({ message: 'Book deleted' });
+};
+
+module.exports = {
+    listBooks,
+    showBook,
+    createBook,
+    updateBookById,
+    removeBook
 };
