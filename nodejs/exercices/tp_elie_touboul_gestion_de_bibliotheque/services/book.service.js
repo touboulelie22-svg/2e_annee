@@ -1,3 +1,5 @@
+const bookEmitter = require('../events/book.events');
+
 let books = [
     { id: 1, titre: 'harry potter', auteur: 'J. K. Rowling', disponible: true },
     { id: 2, titre: 'dragons des tempêtes', auteur: 'Julie Kagawa', disponible: false }
@@ -17,6 +19,7 @@ const addBook = (titre, auteur) => {
     const book = { id: nextId, titre: titre, auteur: auteur, disponible: true };
     nextId++;
     books.push(book);
+    bookEmitter.emit('book:added', book);
     return book;
 };
 
@@ -26,6 +29,7 @@ const deleteBook = (id) => {
         return false;
     }
     books.splice(position, 1);
+    bookEmitter.emit('book:deleted', id);
     return true;
 };
 
